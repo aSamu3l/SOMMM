@@ -130,7 +130,7 @@ void PageSystem::access_point(String random_id)
     do
     {
         display.fillScreen(GxEPD_WHITE);
-        dithering(0, 0, 640, 50, 50, 1);
+        dithering(0, 0, 640, 384, 25, 1);
 
         // LOGO SMALLL IN 3D
         display.drawBitmap(468, 10, gImage_s_shadow, 163, 45, GxEPD_BLACK); // shadow
@@ -142,7 +142,7 @@ void PageSystem::access_point(String random_id)
         display.fillRect(0, 324, 640, 60, GxEPD_BLACK);         // base della scheda
         display.fillRoundRect(0, 285, 175, 60, 5, GxEPD_BLACK); // indicatore tab principlae
         display.fillRoundRect(25, 340, 450, 30, 100, GxEPD_WHITE);
-sdcx   
+
         display.setFont(&FreeSans12pt7b);
         display.setCursor(35, 313);
         display.setTextColor(GxEPD_WHITE);

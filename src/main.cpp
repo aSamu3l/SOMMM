@@ -208,7 +208,7 @@ void setup()
   const unsigned long start_c = millis();
   unsigned long counter = 0;
 
-  while (WiFi.status() != WL_CONNECTED && counter < 40000) // Wait for connection
+  while (WiFi.status() != WL_CONNECTED && counter < 4000) // Wait for connection
   {
     counter = millis() - start_c;
     Serial.println(counter);
@@ -483,9 +483,9 @@ void setup_server()
   });
 
   server.addHandler(new AsyncCallbackJsonWebHandler("/save", save_json));
-  server.serveStatic("/", SPIFFS, "/html/").setDefaultFile("index.html");
-  server.serveStatic("/error_log", SPIFFS, "/log.txt");
-  server.serveStatic("/config", SPIFFS, "/config.json");
+  server.serveStatic("/", SPIFFS, "/html/").setDefaultFile("index.html"); // solo nella prima configurszione
+  server.serveStatic("/error_log", SPIFFS, "/log.txt"); // da rimuovere nella versione ufficiale
+  server.serveStatic("/config", SPIFFS, "/config.json"); // da rimuovere nella versione ufficiale
   server.begin(); // Faccio partire il server
 }
 
